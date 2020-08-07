@@ -21,6 +21,8 @@
         <template slot="no-speak">没听清您说的什么</template>
       </voice-input-button>
     </div>
+
+    <button @click="voicePrompt('我是最帅的')">点击播放</button>
   </div>
 </template>
 
@@ -36,6 +38,9 @@ export default {
     return {
       result: ''
     }
+  },
+  mounted() {
+    this.voicePrompt('我是最帅的');
   },
   methods: {
     recordReady () {
@@ -58,6 +63,10 @@ export default {
     },
     recordFailed (error) {
       console.info('识别失败，错误栈：', error)
+    },
+    //语音提醒
+    voicePrompt (text){
+      new Audio('http://tts.baidu.com/text2audio?cuid=baiduid&lan=zh&ctp=1&pdt=311&tex=' + text).play();
     }
   }
 }
