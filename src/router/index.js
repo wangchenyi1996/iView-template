@@ -14,6 +14,11 @@ Vue.use(VueRouter)
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/scroll',
+    name: 'Scroll',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Scroll.vue')
   }
 ]
 
