@@ -13,12 +13,17 @@ Vue.use(VueRouter)
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
   {
     path: '/scroll',
     name: 'Scroll',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Scroll.vue')
+    component: () => import('../views/Scroll.vue')
+  },
+  {
+    path: '/pdf',
+    name: 'PDF',
+    component: () => import('../views/PDFPriview.vue')
   }
 ]
 

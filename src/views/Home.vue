@@ -11,14 +11,50 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <Button type="primary">Primary</Button>
     <Page :current="1" :total="100"></Page>
+
+    <Button type="primary" @click="goPDF">跳转到预览pdf文件</Button>
   </div>
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: 'Home',
-  components: {
-  }
+  mounted () {
+    const instance = axios.create({
+      baseURL: 'http://localhost:2345',
+      timeout: 3000,
+      headers: {'authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoYW5nc2FuIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJpYXQiOjE1OTc3MTUxNTYsImV4cCI6MTU5ODMxOTk1Nn0.I4ojaSnfB7zp2zHeKjpAi6i1c9ctOPqSstwBbZhFmaA'}
+    });
+    instance.post('/users/user', {})
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    //  instance.post('/users/login', {
+    //    username:'wq',
+    //    password:'123456'
+    //  })
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+     instance.post('/users/test')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
+  methods: {
+    goPDF() {
+      this.$router.push('/pdf')
+    }
+  },
 }
 </script>
