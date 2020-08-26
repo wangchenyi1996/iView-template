@@ -24,6 +24,11 @@ Vue.use(VueRouter)
     path: '/pdf',
     name: 'PDF',
     component: () => import('../views/PDFPriview.vue')
+  },
+  {
+    path: '/upload',
+    name: 'Upload',
+    component: () => import('../views/Upload.vue')
   }
 ]
 
