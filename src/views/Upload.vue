@@ -1,7 +1,7 @@
 <template>
   <div class="up-box">
     <p class="up-txt">Node + H5 实现大文件分片上传、断点续传</p>
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-md-8">
           <div class="wrap btn btn-default">
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
